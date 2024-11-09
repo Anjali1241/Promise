@@ -8,6 +8,13 @@
 
 // Rejected: The state of a promise when the operation has failed. The promise has a reason for the failure, and it can be handled using the catch method.
 
+// Why we use Promise?
+// Ans:to prevent from callback hell and allow asynchronous operations.
+
+// Notes:
+// 1. Promises are used to handle asynchronous operations in JavaScript.
+// 2. Promises were added in ES6.
+// 3. Can be use for API call
 // -------------------------Examples--------------------------------
 
 // Reject promise
