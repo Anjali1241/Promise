@@ -1,4 +1,5 @@
 This Repository contains the document of promises in javascript.
+run command: node promise.js
 
 * Promise.js
 ->refer Link:
