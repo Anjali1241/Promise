@@ -15,6 +15,9 @@
 // 1. Promises are used to handle asynchronous operations in JavaScript.
 // 2. Promises were added in ES6.
 // 3. Can be use for API call
+// 4. When we create a promise, it will be either resolved or rejected but not both at the same time. So we cannot add two resolve or reject function calls in the same promise.
+// 5. we can pass only a single value to the resolve or reject function.
+// 6. If you want to pass multiple values to a resolve function, pass it as an object.
 // -------------------------Examples--------------------------------
 
 // Reject promise
@@ -30,3 +33,33 @@ const resolvePromise=new Promise((resolve,reject)=>{
     user?resolve(user):reject("user not found")
 })
 resolvePromise.then((data)=>console.log(data)).catch(data=>console.log(data))
+
+
+// Both combined
+const combinedPromise=new Promise((resolve,reject)=>{
+    const sum=4+5+"a";
+    if(typeof sum=="number"){
+
+        resolve("sum is in number")
+    }else{
+        reject("sry sum is not a number")
+    }
+})
+combinedPromise.then((result)=>console.log(result)).catch((result)=>console.log(result))
+
+// Delay Promise and return object because resolve and reject only return single value(i.e: we have to pass it in object format)
+const delayPromise=new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        const sum=4+5;
+        if(typeof sum=="number"){
+            resolve({
+                a:4,
+                b:5,
+                sum
+            })
+        }else{
+            reject("sry sum is not a number")
+        }
+    },2000)
+})
+delayPromise.then((result)=>console.log("Delay promise",result)).catch((result)=>console.log(result))
