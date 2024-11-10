@@ -63,3 +63,43 @@ const delayPromise=new Promise((resolve, reject)=>{
     },2000)
 })
 delayPromise.then((result)=>console.log("Delay promise",result)).catch((result)=>console.log(result))
+
+// Async/await gives developers a better way to use promises.(this async keyword will always return promise)
+const asyncFunction=async()=>{return "hie, nice to meet you"}
+console.log(asyncFunction())//output: Promise { 'hie, nice to meet you' }
+asyncFunction().then((result)=>console.log("async result-->",result))//output: async result--> hie, nice to meet you
+
+// Now use of await keyword with async function
+
+// Problem statement(reason: why we are using await keyword)
+// Example: return product of two values
+const productOfTwo=(a,b)=>{
+    const promise=new Promise((reslove,reject)=>{
+        setTimeout(()=>{
+            reslove(a*b) 
+        },1000)
+    })
+   return promise
+}
+
+// calling of it
+productOfTwo(2, 4).then(result => {
+    return productOfTwo(result, 2).then(finalResult => console.log('final_result', finalResult)).catch(error => console.log(error));
+  }).catch(error => console.log(error));
+
+//   In the above code, we're first getting the product of 2 and 4. Then we're using that result to multiply it by 2 again, and then finally printing the product.
+
+//   If you execute the above code, you will see the final result as 16 which is 2 4 = 8 and 8 2 = 16.
+
+// The above code of .then and .catch looks pretty complicated and difficult to understand at one glance.
+
+// So using async/await we can simplify the above code to this:
+
+const useOfAwait=async()=>{
+    const result=await productOfTwo(2,4)
+    const finalResult=await productOfTwo(result,2)
+    console.log("final result of await",finalResult)
+}
+useOfAwait()
+
+// There is a very important thing you need to remember: The above async/await code will work exactly the same as when we use .then – so the next await line (line 2) will not be executed until the previous await call (line 1) is successful.
