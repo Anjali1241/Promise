@@ -5,7 +5,9 @@ run command: node promise.js
 ->refer Link:
 -https://dev.to/bhataasim/types-of-promises-in-javascript-4n19
 -https://www.freecodecamp.org/news/javascript-promises-async-await-and-promise-methods/
-->improtant info under link:
+-Youtube Video: https://www.youtube.com/watch?v=4jaiXP6vU2w&list=PLSJnlFr3D-mGIHFpo80ylsaBErtueSpYS&index=15
+
+->important info under links:
 
 * Recap
     -Simple Promise: For single async operation like fetching data from an API.
