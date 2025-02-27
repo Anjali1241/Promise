@@ -1,5 +1,5 @@
-This Repository contains the document of promises in javascript.
-run command: node promise.js
+-This Repository contains the document of promises in javascript.
+-command to run file: node promise.js
 
 * Promise.js
 ->refer Link:
@@ -9,7 +9,7 @@ run command: node promise.js
 
 ->important info under links:
 
-* Recap
+* Recap(promise methods)
     -Simple Promise: For single async operation like fetching data from an API.
     -Promise.all: For multiple async operations that are not dependent on each other.
     -Promise.allSettled: When you want to know all results, even failures.
